@@ -787,6 +787,7 @@ public:
 	uint64_t get_physics_frames() const;
 	uint64_t get_idle_frames() const;
 
+	uint64_t get_idle_frame_ticks() const;
 	int get_frames_drawn();
 
 	void set_time_scale(float p_scale);

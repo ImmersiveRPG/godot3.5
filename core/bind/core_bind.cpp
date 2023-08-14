@@ -3091,6 +3091,10 @@ int _Engine::get_frames_drawn() {
 	return Engine::get_singleton()->get_frames_drawn();
 }
 
+uint64_t _Engine::get_idle_frame_ticks() const {
+	return Engine::get_singleton()->get_idle_frame_ticks();
+}
+
 MainLoop *_Engine::get_main_loop() const {
 	//needs to remain in OS, since it's actually OS that interacts with it, but it's better exposed here
 	return OS::get_singleton()->get_main_loop();
@@ -3160,6 +3164,7 @@ void _Engine::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_time_scale", "time_scale"), &_Engine::set_time_scale);
 	ClassDB::bind_method(D_METHOD("get_time_scale"), &_Engine::get_time_scale);
 
+	ClassDB::bind_method(D_METHOD("get_idle_frame_ticks"), &_Engine::get_idle_frame_ticks);
 	ClassDB::bind_method(D_METHOD("get_frames_drawn"), &_Engine::get_frames_drawn);
 	ClassDB::bind_method(D_METHOD("get_frames_per_second"), &_Engine::get_frames_per_second);
 	ClassDB::bind_method(D_METHOD("get_physics_frames"), &_Engine::get_physics_frames);
